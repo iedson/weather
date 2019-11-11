@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class='container'>
+    <h1>What's The Weather</h1> <!---container row 1-->
+    <!-- search input box (event on mag glass) -->
+    <div id="searchWrapper"> <!---container row 2 column 1-->
+        <div>
+            <input id="locationSearch" type="text" placeholder="Search location..." />
+            <button class="fas fa-search-location" id="locationSubmit"></button>
+        </div>
+    <!-- list of previous searches (event on history click) -->
+            
+
+
+  </div>
+    <!---Current Weather Card Container row 2 column 2 -->
+    <div id='currentWeather'> 
+        <div> <!---City/Date/Weater Icon Row 1-->
+            <div id='city'></div>
+            <div id='date'></div>
+            <div id='weathImg'></div>
+        </div>
+        <!---Rows for rest of DB data-->
+        <div id='temp'></div> <!---Row 2-->
+        <div id='humidity'></div> <!---Row 3-->
+        <div id='windSpeed'></div> <!---Row 4-->
+        <div id='uvIndex'></div> <!---Row 5-->
+    </div>
+    <!-- 5 day weather outlook Container Row 3-->
+
+    </div>
+
+    <footer>
+        <div>
+            Powered by <a href="https://openweathermap.org/">Open Weather</a>
+            <a href="https://openweathermap.org/"></a>
+        </div>
+    </footer>
+    <script src="./app.js"></script>
+</body>
+</html>
