@@ -1,14 +1,29 @@
 $(document).ready(function() {
-  var city = 'chicago'
-  var apiKey = "76ceaebf5a55c4ff1b10640296da45b9"
-  var weatherURL = "api.openweathermap.org/data/2.5/weather?q=London";
+  let city = 'chicago'
+  const apiKey = '76ceaebf5a55c4ff1b10640296da45b9';
+  let weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
     $.ajax({
       url: weatherURL,
       method: "GET"
     }).then(function(response) {
       console.log(response);
+
+      $('#city').html(response.name);
+      $('#temp').html('Current Temperature: ' + response.main.temp + '&deg F');
+      $('#humidity').html('Humidity: ' + response.main.humidity + '%');
+      $('#windSpeed').html('Wind: ' + response.wind.speed + 'MPH');
+
   
     });
+
+  //Current Time - Moment.js
+  let update = function() {
+    document.getElementById('date')
+    .innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
+  }
+  setInterval(update, 1000);
+
+  //Current City - Chicago Initially changes with user input
 
 
 
