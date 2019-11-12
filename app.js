@@ -23,7 +23,7 @@ $(document).ready(function() {
   //Current Time - Moment.js
   let update = function() {
     document.getElementById('date')
-    .innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
+    .innerHTML = moment().format('MMMM Do, YYYY');
   }
   setInterval(update, 1000);
 
@@ -36,15 +36,59 @@ $(document).ready(function() {
     method: 'GET'
   }).then(function(response){
     console.log(response);
+    //temperatures
+    $('#dayoneT').html(response.list[0].main.temp + '&deg F');
+    $('#daytwoT').html(response.list[1].main.temp + '&deg F');
+    $('#daythreeT').html(response.list[2].main.temp + '&deg F');
+    $('#dayfourT').html(response.list[3].main.temp + '&deg F');
+    $('#dayfiveT').html(response.list[4].main.temp + '&deg F');
 
-    $('#dayone').html(response.list[0].main.temp + '&deg F');
-    $('#daytwo').html(response.list[1].main.temp + '&deg F');
-    $('#daythree').html(response.list[2].main.temp + '&deg F');
-    $('#dayfour').html(response.list[3].main.temp + '&deg F');
-    $('#dayfive').html(response.list[4].main.temp + '&deg F');
+    //humidity
+    $('#dayoneH').html(response.list[0].main.humidity + '%');
+    $('#daytwoH').html(response.list[1].main.humidity + '%');
+    $('#daythreeH').html(response.list[2].main.humidity + '%');
+    $('#dayfourH').html(response.list[3].main.humidity + '%');
+    $('#dayfiveH').html(response.list[4].main.humidity + '%');
+    
+    
 
+
+    //weather images
 
   });
+//Update Forecast Days
+  //Day One
+  let doneD = function() {
+    document.getElementById('dayoneD')
+    .innerHTML = moment().format('MM/D/YY');
+  }
+  setInterval(doneD, 1000);
+  //Day Two
+  let dtwoD = function() {
+    document.getElementById('daytwoD')
+    .innerHTML = moment().add(1,'days').format('MM/D/YY');
+  }
+  setInterval(dtwoD, 1000);
+
+  //Day Three
+  let dthreeD = function() {
+    document.getElementById('daythreeD')
+    .innerHTML = moment().add(1,'days').format('MM/D/YY');
+  }
+  setInterval(dthreeD, 1000);
+  //Day Four
+  let dfourD = function() {
+    document.getElementById('dayfourD')
+    .innerHTML = moment().add(1,'days').format('MM/D/YY');
+  }
+  setInterval(dfourD, 1000);
+
+  //Day Five
+  let dfiveD = function() {
+    document.getElementById('dayfiveD')
+    .innerHTML = moment().add(1,'days').format('MM/D/YY');
+  }
+  setInterval(dfiveD, 1000);
 
   // Call api with user input - search (see Day Planner for local storage js)
     //user presses enter
