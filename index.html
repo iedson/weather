@@ -10,36 +10,48 @@
   
 
 </head>
-<body>
+<body class="bgc-ws df df-fdc ai-c jc-c m-s">
     <div class='container'>
-    <h1>What's The Weather</h1> <!---container row 1-->
-    <!-- search input box (event on mag glass) -->
-    <div id="searchWrapper"> <!---container row 2 column 1-->
-        <div>
-            <input id="locationSearch" type="text" placeholder="Search location..." />
-            <button class="fas fa-search-location" id="locationSubmit"></button>
+    <header class="jumbotron">
+        <h1 class="row text-center">What's The Weather?</h1> <!---container row 1-->
+    </header>
+    <div class="row">
+    <div class="card col-md-4" id="searchWrapper"> <!---container column 1-->
+        <div class="row">
+            <!-- search input box (event on mag glass) -->
+            <input id="userSearch" type="text" placeholder="Search location..." />
+            <button class="fas fa-search-location" id="userSubmit"></button>
         </div>
     <!-- list of previous searches (event on history click) -->
-            
-
-
-  </div>
-    <!---Current Weather Card Container row 2 column 2 -->
-    <div id='currentWeather'> 
-        <div> <!---City/Date/Weater Icon Row 1-->
-            <div id='city'></div>
-            <div id='date'></div>
-            <div id='weathImg'></div>
-        </div>
+        <div class="row" id="searchHistory">Past Searches</div> 
+    </div>   
+  
+    <!---Current Weather Card Container column 2 -->
+        <div class="card col-md-8"id='currentWeather'> 
+            <div> <!---City/Date/Weater Icon Row 1-->
+                <div class="text-bold" id='city'></div>
+                <div id='date'></div>
+                <div id='weathImg'></div>
+            </div>
         <!---Rows for rest of DB data-->
-        <div id='temp'></div> <!---Row 2-->
-        <div id='humidity'></div> <!---Row 3-->
-        <div id='windSpeed'></div> <!---Row 4-->
-        <div id='uvIndex'></div> <!---Row 5-->
+            <div id='temp'></div> <!---Row 2-->
+            <div id='humidity'></div> <!---Row 3-->
+            <div id='windSpeed'></div> <!---Row 4-->
+            <div id='uvIndex'></div> <!---Row 5-->
+        </div>
     </div>
     <!-- 5 day weather outlook Container Row 3-->
-
+    <div class="card" id='fivedayContainer'>Five Day Forecast
+        <div class="row">
+        <div class="card col-md-2" id='dayone'></div>
+        <div class="card col-md-2" id='daytwo'></div>
+        <div class="card col-md-2" id='daythree'></div>
+        <div class="card col-md-2" id='dayfour'></div>
+        <div class="card col-md-2" id='dayfive'></div>
+        </div>
     </div>
+
+    </div> 
 
     <footer>
         <div>
