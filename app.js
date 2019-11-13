@@ -73,20 +73,20 @@ $(document).ready(function() {
   //Day Three
   let dthreeD = function() {
     document.getElementById('daythreeD')
-    .innerHTML = moment().add(1,'days').format('MM/D/YY');
+    .innerHTML = moment().add(2,'days').format('MM/D/YY');
   }
   setInterval(dthreeD, 1000);
   //Day Four
   let dfourD = function() {
     document.getElementById('dayfourD')
-    .innerHTML = moment().add(1,'days').format('MM/D/YY');
+    .innerHTML = moment().add(3,'days').format('MM/D/YY');
   }
   setInterval(dfourD, 1000);
 
   //Day Five
   let dfiveD = function() {
     document.getElementById('dayfiveD')
-    .innerHTML = moment().add(1,'days').format('MM/D/YY');
+    .innerHTML = moment().add(4,'days').format('MM/D/YY');
   }
   setInterval(dfiveD, 1000);
 
